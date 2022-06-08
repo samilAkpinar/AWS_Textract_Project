@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>iLoveTextract</title>
+    <link href="static/css/app.683c58e.css" rel="stylesheet">
+    <script>
+      function showConvertButton() {
+        var file = document.getElementById("file");
+        document.getElementById("file_name").innerHTML  = file.value;
+        if(file.value != ""){
+          document.getElementById("submit").style.display="";
+        }else{
+          document.getElementById("submit").style.display="none";
+        }
+      }
+    </script>
+  </head>
+  <body class="lang-en-US toolpage  ">
+    <div class="header">
+      <div class="header__main">
+        <div class="brand">
+          <div class="brand__logo">
+            <B>
+              <a href="/" title="iLovePDF">iLoveTextract</a>
+            </B>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="tool tool--small">
+        <div class="tool__workarea" id="workArea">
+          <div class="tool__header">
+            <h1 class="tool__header__title">Textract Your Files</h1>
+            <h2 class="tool__header__subtitle">You can easily extract texts from your files with AWS ML Service Textract. </h2>
+          </div>
+          <div id="uploader" class="uploader">
+            <form action="/uploadConvert" method="POST" >
+            <a class="uploader__btn tooltip--left" id="pickfiles" href="javascript:;" style="border-radius:110px; cursor:pointer" onChange="showConvertButton()">
+              <label class="file-label" style="color: white;font-weight: bold;font-size:30px; cursor:pointer">
+              <input id="file" class="file-input" type="file" name="image" style="color:white; border:none; background-color: #e5322d; display:none">Choose Your File...</input>
+              </label>
+            </a>
+              <div id="file_name">
+              </div>
+              <BR>
+              <a id="submit"  class="uploader__btn tooltip--left" style="width: 100%; border-radius:110px; display:none; cursor:pointer">
+                <label class="image-label" style="color: white;font-weight: bold;font-size:30px; cursor:pointer">
+                  <input type="submit" name="uploadimage" style="display: none">Convert</input>
+                </label>
+            </a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__copy"> &copy; iLoveTextract 2022 &reg;  </div>
+    </div>
+  </body>
+</html>
